@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+shopt -s nullglob
+
+project_dir="$ST2_ROOT/projects"
+
+for file in $(ls -1 "$project_dir"/*.sublime-project); do
+    echo `basename "$file" | sed 's/\.sublime-project$//'`
+done

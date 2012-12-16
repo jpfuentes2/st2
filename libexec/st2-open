@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+set -e
+
+list_files() {
+    local project_dir="$ST2_ROOT/projects"
+    for file in "$project_dir/*.sublime-project"; do
+        echo "$file"
+    done
+}
+
+open_file() {
+    local project_dir="$ST2_ROOT/projects"
+    local project="$project_dir/$1.sublime-project"
+    local file="$1"
+
+    if [ -e "$project" ]; then
+        subl --project $project
+    elif [ -e "$file" ]; then
+        subl "$file"
+    else
+        echo "Cannot open $file. Not found in $PWD or $project_dir"
+    fi
+}
+
+# Provide st2 completions
+if [ "$1" = "--complete" ]; then
+    exec st2-projects
+fi
