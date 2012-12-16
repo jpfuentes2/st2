@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-echo $RBENV_ROOT
+echo $ST2_ROOT
