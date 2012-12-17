@@ -3,17 +3,11 @@ set -e
 [ -n "$ST2_DEBUG" ] && set -x
 
 print=""
-no_rehash=""
 for args in "$@"
 do
   if [ "$args" = "-" ]; then
     print=1
 		shift
-  fi
-
-  if [ "$args" = "--no-rehash" ]; then
-    no_rehash=1
-    shift
   fi
 done
 
@@ -68,19 +62,11 @@ if [ -z "$print" ]; then
   exit 1
 fi
 
-mkdir -p "${ST2_ROOT}/"{shims,versions}
-
-echo 'export PATH="'${ST2_ROOT}'/shims:${PATH}"'
-
 case "$shell" in
 bash | zsh )
   echo "source \"$root/completions/st2.${shell}\""
   ;;
 esac
-
-if [ -z "$no_rehash" ]; then
-  echo 'st2 rehash 2>/dev/null'
-fi
 
 commands=(`st2-commands --sh`)
 IFS="|"
