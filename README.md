@@ -29,7 +29,7 @@ st2 operates on the per-user directory `~/.st2`. Project settings are stored in 
 If you're on Mac OS X, consider
 [installing with Homebrew](#homebrew-on-mac-os-x). - Coming Soon!
 
-### Prerequisites
+### Prerequisites ###
 
 You must symlink the `subl` command to give st2 access to Sublime Text 2's CLI.
 
@@ -61,7 +61,7 @@ easy to fork and contribute any changes back upstream.
     point 3 below to your `~/.profile`. This has the added advantage
     of working under both bash and zsh.
 
-3. Add `st2 init` to your shell to enable shims and autocompletion.
+3. Add `st2 init` to your shell to enable autocompletion.
 
     ~~~ sh
     $ echo 'eval "$(st2 init -)"' >> ~/.bash_profile
@@ -97,14 +97,15 @@ first argument. The most common subcommands are:
 
 ### st2 open ###
 
-Opens an existing project or file/directory.
+Opens an existing project or file/directory. Forwards options to the `subl` command.
 
     $ st2 open /path/to/code
     $ st2 open my_project
+    $ st2 open /path/to/code /path/to/more/code -add
 
 ### st2 project ###
 
-Creates a new Sublime Text 2 project where the first argument is the name and all subsequent arguments are directories included in the project.
+Creates a new Sublime Text 2 project where the first argument is the name and all subsequent arguments are directories included in the project. Afterwards, it opens a new ST2 window with the project's folders loaded.
 
     $ st2 project awesome_project /path/to/code /path/to/more/code
 
