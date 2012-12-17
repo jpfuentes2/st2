@@ -15,6 +15,7 @@ open_file() {
         subl "$file" "$@"
     else
         echo "Cannot find $file."
+        exit 2
     fi
 }
 
