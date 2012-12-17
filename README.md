@@ -10,7 +10,7 @@ st2 was forked and inspired from [rbenv][]. Thanks, Sam!
 * [Installation](#installation)
   * [Basic GitHub Checkout](#basic-github-checkout)
     * [Upgrading](#upgrading)
-  * [Homebrew on Mac OS X](#homebrew-on-mac-os-x)
+  * [Homebrew on Mac OS X](#homebrew-on-mac-os-x) - Coming Soon!
 * [Usage](#usage)
   * [st2 open](#st2-open)
   * [st2 project](#st2-project)
@@ -26,7 +26,7 @@ st2 operates on the per-user directory `~/.st2`. Project settings are stored in 
 ## Installation ##
 
 If you're on Mac OS X, consider
-[installing with Homebrew](#homebrew-on-mac-os-x).
+[installing with Homebrew](#homebrew-on-mac-os-x). - Coming Soon!
 
 ### Basic GitHub Checkout ###
 
@@ -81,18 +81,7 @@ $ git pull
 
 ### Homebrew on Mac OS X ###
 
-You can also install st2 using the [Homebrew][] on Mac OS X.
-
-~~~
-$ brew update
-$ brew install st2
-~~~
-
-To later update these installs, use `upgrade` instead of `install`.
-
-Afterwards you'll still need to add `eval "$(st2 init -)"` to your
-profile as stated in the caveats. You'll only ever have to do this
-once.
+Coming Soon!
 
 ## Usage ##
 
