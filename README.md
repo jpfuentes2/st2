@@ -8,6 +8,7 @@ st2 was forked and inspired from [rbenv][]. Thanks, Sam!
 
 * [How It Works](#how-it-works)
 * [Installation](#installation)
+  * [Prerequisites](#prerequisites)
   * [Basic GitHub Checkout](#basic-github-checkout)
     * [Upgrading](#upgrading)
   * [Homebrew on Mac OS X](#homebrew-on-mac-os-x) - Coming Soon!
@@ -28,9 +29,11 @@ st2 operates on the per-user directory `~/.st2`. Project settings are stored in 
 If you're on Mac OS X, consider
 [installing with Homebrew](#homebrew-on-mac-os-x). - Coming Soon!
 
-### Symlink the subl command
+### Prerequisites
 
-You must symlink the `subl` command using `ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl` to give st2 access to Sublime Text 2's CLI.
+You must symlink the `subl` command to give st2 access to Sublime Text 2's CLI.
+
+`ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl`
 
 ### Basic GitHub Checkout ###
 
