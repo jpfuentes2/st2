@@ -2,7 +2,7 @@
 set -e
 [ -n "$ST2_DEBUG" ] && set -x
 
-version=0.3.0
+version=0.1.0
 
 cd "$ST2_ROOT"
 git_revision="$(git describe --tags HEAD 2>/dev/null || true)"
