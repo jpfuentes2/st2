@@ -4,25 +4,28 @@ set -e
 
 create_project() {
     local project_name="$1"
-    local sublime_projects="$ST2_ROOT/projects"
+    local project_directory="$ST2_ROOT/projects"
     local target_dir="$2"
 
-    local name=
-    local project="$name".sublime-project
-    local workspace="$name".sublime-workspace
+    mkdir -p "$project_directory"
+
+    local project="$project_directory"/"$project_name".sublime-project
+    local workspace="$project_directory"/"$project_name".sublime-workspace
 
     if [ -z "$target_dir" ]; then
-      echo "Could not find target directory "$target_dir""
-    elif [ -ne "$project"]; then
-      echo ""$project" already exists as a project"
+      echo "You must provide at least one directory for your project."
+      exit 2
+    elif [ -f "$project" ]; then
+      echo "The project $project_name already exists. Use st2-open "$project_name" to open it."
+      exit 2
     else
       touch "$project"
       touch "$workspace"
 
       echo "{\"folders\":[{\"path\": \""$target_dir"\"}]}" >> "$project"
-      echo "{}" >> "$project"
+      echo "{}" >> "$workspace"
 
-      subl -n -a "$target_dir" --project $project
+      subl -n "$target_dir" --project $project
     fi
 }
 
