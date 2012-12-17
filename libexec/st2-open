@@ -2,13 +2,6 @@
 
 set -e
 
-list_files() {
-    local project_dir="$ST2_ROOT/projects"
-    for file in "$project_dir/*.sublime-project"; do
-        echo "$file"
-    done
-}
-
 open_file() {
     local project_dir="$ST2_ROOT/projects"
     local project="$project_dir/$1.sublime-project"
