@@ -7,16 +7,20 @@ open_file() {
     local project="$project_dir/$1.sublime-project"
     local file="$1"
 
+    shift
+
     if [ -e "$project" ]; then
         subl --project $project
     elif [ -e "$file" ]; then
-        subl "$file"
+        subl "$file" "$@"
     else
-        echo "Cannot open $file. Not found in $PWD or $project_dir"
+        echo "Cannot find $file."
     fi
 }
 
 # Provide st2 completions
 if [ "$1" = "--complete" ]; then
     exec st2-projects
+else
+    open_file "$@"
 fi
