@@ -28,6 +28,10 @@ st2 operates on the per-user directory `~/.st2`. Project settings are stored in 
 If you're on Mac OS X, consider
 [installing with Homebrew](#homebrew-on-mac-os-x). - Coming Soon!
 
+### Symlink the subl command
+
+You must symlink the `subl` command using `ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl` to give st2 access to Sublime Text 2's CLI.
+
 ### Basic GitHub Checkout ###
 
 This will get you going with the latest version of st2 and make it
