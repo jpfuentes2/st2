@@ -6,6 +6,6 @@ shopt -s nullglob
 
 project_directory=""$ST2_ROOT"/projects"
 
-for file in $(ls -1 ""$project_directory"/*.sublime-project" 2> /dev/null); do
+for file in $(ls -1 "$project_directory"/*.sublime-project 2> /dev/null); do
     echo `basename "$file" | sed 's/\.sublime-project$//'`
 done
